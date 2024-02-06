@@ -9,6 +9,8 @@ r = sr.Recognizer()
 data = {}
 run = True
 
+
+
 with open("captions.json", "r") as f:
     pass
 
@@ -24,7 +26,7 @@ while run:
 
     # recognize speech using Sphinx
     try:
-        text = r.recognize_sphinx(audio)
+        text = r.recognize_google(audio, language = 'en-US') 
         print("Sphinx thinks you said " + text)
         print(json.dumps(data, indent=4))
 
